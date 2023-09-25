@@ -1,0 +1,271 @@
+/**
+ * Typography
+ */
+
+.align_center,
+.text-center {
+  text-align: center;
+}
+
+.align_right,
+.text-right {
+  text-align: right;
+}
+
+.align_left,
+.text-left {
+  text-align: left;
+}
+
+.align_justify,
+.text-justify {
+  text-align: justify;
+}
+
+.text-muted {
+  color: #888;
+}
+
+.text-small {
+  font-size: 0.8em;
+}
+
+.text-large {
+  font-size: 1.2em;
+}
+
+.text-up {
+  text-transform: uppercase;
+}
+
+.text-down {
+  text-transform: lowercase;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-lite {
+  font-weight: 300;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.line-height-1 {
+  line-height: 1;
+}
+
+.line-height-15 {
+  line-height: 1.5;
+}
+
+/**
+ * Rotate
+ */
+.text-rotate-90 {
+  text-rotate: 90;
+}
+
+
+/**
+ * Colors
+ */
+.color-white {
+  color: #fff;
+}
+
+.color-white-light {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/**
+ * backgrounds
+ */
+.bg-white {
+  background-color: #fff;
+}
+.bg-muted {
+  background-color: #ececea;
+}
+
+/**
+ * width
+ */
+.width-100 {
+  width: 100%;
+}
+
+.width-90 {
+  width: 90%;
+}
+
+.width-80 {
+  width: 80%;
+}
+
+.width-70 {
+  width: 70%;
+}
+
+.width-60 {
+  width: 60%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-49 {
+  width: 49%;
+}
+
+.width-48 {
+  width: 48%;
+}
+
+.width-40 {
+  width: 40%;
+}
+
+.width-30 {
+  width: 30%;
+}
+
+.width-20 {
+  width: 20%;
+}
+
+.width-10 {
+  width: 10%;
+}
+
+
+/**
+ * margin
+ */
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin-remove {
+  margin: 0;
+}
+
+.margin-remove-top {
+  margin-top: 0;
+}
+
+.margin-remove-bottom {
+  margin-bottom: 0;
+}
+
+.margin {
+  margin: 20px 0;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.margin-small {
+  margin: 10px 0;
+}
+
+.margin-small-top {
+  margin-top: 10px;
+}
+
+.margin-small-bottom {
+  margin-bottom: 10px;
+}
+
+/**
+ * padding
+ */
+.padding {
+  padding: 20px;
+}
+
+.padding-small {
+  padding: 10px;
+}
+
+/**
+ * Float
+ */
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/**
+ * List
+ */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/**
+ * Table
+ */
+
+.table-reset {
+  box-sizing: border-box;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table {
+  box-sizing: border-box;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid white;
+  vertical-align: middle;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid #dbdbdb;
+  padding: 12px;
+ 
+}
+
+.v-align-middle {
+  vertical-align: middle;
+}
+
+.v-align-top {
+  vertical-align: top;
+}
+
+.v-align-bottom {
+  vertical-align: bottom;
+}

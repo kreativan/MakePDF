@@ -19,7 +19,7 @@ class MakePDF extends WireData implements Module {
       'author' => "Ivan Milincic",
       "href" => "https://kreativan.dev",
       'singular' => true,
-      'autoload' => true
+      'autoload' => false
     );
   }
 

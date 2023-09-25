@@ -32,6 +32,13 @@ $pdf_pages = [
   ],
 ];
 
+// Include static pdf files
+$pdf_files = [
+  __DIR__ . "/pdf/file-1.pdf",
+  __DIR__ . "/pdf/file-2.pdf",
+  __DIR__ . "/pdf/file-3.pdf",
+];
+
 // Set the options
 $options = [
   "font" => "mono",
@@ -42,7 +49,7 @@ $options = [
 ];
 
 // Generate PDF
-$pdf->generatePDF($pdf_pages, $options);
+$pdf->generatePDF($pdf_pages, $pdf_files, $options);
 
 
 ```

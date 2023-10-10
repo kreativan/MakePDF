@@ -29,7 +29,19 @@ class MakePDF extends WireData implements Module {
 
 
   public function init() {
-		// ...
+    /**
+     * Temp folder. Create temp folder if not exists
+     */
+    $this->temp_folder = $this->config->paths->assets . 'temp/';
+    if (!is_dir($this->temp_folder)) $this->files->mkdir($this->temp_folder);
+  }
+	
+  /**
+   * Get temp folder path
+   * @return string
+   */
+  public function temp_path() {
+    return $this->temp_folder;
   }
 
   /**

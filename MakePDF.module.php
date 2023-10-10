@@ -36,18 +36,6 @@ class MakePDF extends WireData implements Module {
     if (!is_dir($this->temp_folder)) $this->files->mkdir($this->temp_folder);
   }
 
-  public function test() {
-    return "MakePDF module is working!";
-  }
-
-  /**
-   * Get temp folder path
-   * @return string
-   */
-  public function temp_path() {
-    return $this->temp_folder;
-  }
-
   /**
    * Default PDF options
    * @param string $html - html content to convert

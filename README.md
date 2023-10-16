@@ -8,10 +8,31 @@ Use this method to simply convert any html mark into pdf file.
 ```php
 // Get the module
 $pdf = $modules->get('MakePDF');
+
 // Set the options
 $options = [];
+
 // Generate PDF
 $pdf->html2pdf("<h1>hello world</h1>", $options);
+```
+
+### FILE 2 PDF
+Use this method to convert contents of a file (html) in PDF.
+```php
+// Get the module
+$pdf = $modules->get('MakePDF');
+
+// Set the options
+$options = [];
+
+// Full file path
+$file_path = __DIR__ . "/my-pdf-template.php";
+
+// Variables to pass to the file
+$vars = ['one' => 1, 'two' => 2];
+
+// Generate PDF 
+$pdf->file2pdf($file_path, $vars, $options);
 ```
 
 ### GeneratePDF

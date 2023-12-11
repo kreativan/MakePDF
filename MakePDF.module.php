@@ -35,7 +35,7 @@ class MakePDF extends WireData implements Module {
     $this->temp_folder = $this->config->paths->assets . 'temp/';
     if (!is_dir($this->temp_folder)) $this->files->mkdir($this->temp_folder);
   }
-	
+
   /**
    * Get temp folder path
    * @return string
@@ -86,6 +86,7 @@ class MakePDF extends WireData implements Module {
       'footer' => !empty($array['footer']) ? $array['footer'] : "",
       'font' => !empty($array['font']) ? $array['font'] : "sans", // sans, cobdensed, serif, slab
       'debug' => !empty($array['debug']) && $array['debug'] == 1 ? true : false,
+      'stylesheet' => !empty($array['stylesheet']) ? $array['stylesheet'] : '',
     ];
 
     //
@@ -144,8 +145,8 @@ class MakePDF extends WireData implements Module {
 
     return $options;
   }
-	
-	/**
+
+  /**
    * File to PDF
    * Use @method html2pdf() to convert contents of a file to pdf
    * @param string $file_path - path to file to convert
@@ -168,7 +169,7 @@ class MakePDF extends WireData implements Module {
 
     $this->html2pdf($html, $options);
   }
-	
+
 
   /**
    * HTML to PDF
@@ -196,18 +197,28 @@ class MakePDF extends WireData implements Module {
     require_once(__DIR__ . "/mpdf/vendor/autoload.php");
 
     /**
-		 * Init
-		 */
+     * Init
+     */
     $mpdf = new \Mpdf\Mpdf($options);
 
     // Show image errors in debug mode
     if ($this->config->debug) $mpdf->showImageErrors = true;
 
-    // Write html
+    // Add default stylesheet to the pdf
     $stylesheet = file_get_contents(__DIR__ . '/css/mpdf.css');
     $mpdf->WriteHTML($stylesheet, \Mpdf\HTMLParserMode::HEADER_CSS);
+
+    // Add custom stylesheet to the pdf
+    if ($options['stylesheet'] != '') {
+      $custom_stylesheet = file_get_contents($options['stylesheet']);
+      $mpdf->WriteHTML($custom_stylesheet, \Mpdf\HTMLParserMode::HEADER_CSS);
+    }
+
+    // Set header and footer
     if ($header != '') $mpdf->SetHTMLHeader($header);
     if ($footer != '') $mpdf->SetHTMLFooter($footer);
+
+    // Write html
     $mpdf->WriteHTML($html);
 
     // Output

@@ -94,6 +94,7 @@ $pdf->generatePDF($pdf_pages, $pdf_files, $options);
 | `footer` | The HTML code for the footer of the PDF file. | An empty string |
 | `font` | The font family of the generated PDF file. Can be either `sans`, `condensed`, `serif`, or `slab`. | `sans` |
 | `debug` | Whether to enable debug mode. | `false` |
+| `stylesheet` | Add custom stylesheet. Path to the css file |  |
 
 ### CSS
 Modules includes basic css utility classes that you can use to style your pdf.

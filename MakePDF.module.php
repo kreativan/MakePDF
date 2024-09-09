@@ -312,11 +312,15 @@ class MakePDF extends WireData implements Module {
     if ($pdf_files && count($pdf_files) > 0) {
       foreach ($pdf_files as $file) {
         if (file_exists($file)) {
+           // Set the source file
+           $source_file = $mpdf->SetSourceFile($file);
           try {
-            $mpdf->AddPage();
-            $source_file = $mpdf->setSourceFile($file);
-            $pdf_file = $mpdf->importPage($source_file);
-            $mpdf->useTemplate($pdf_file, 0, 0, $format[0], $format[1]);
+            // Loop through each page of the PDF
+            for ($page = 1; $page <= $source_file; $page++) {
+              $mpdf->AddPage(); // Add a new page to the mPDF document
+              $pdf_page = $mpdf->ImportPage($page); // Import the page
+              $mpdf->UseTemplate($pdf_page, 0, 0, $format[0], $format[1]); // Use the template
+            }
           } catch (Exception $e) {
             $file_name = basename($file);
             $mpdf->WriteHTML("<div style='padding:20px;color:red;'><b>{$file_name}</b> file is invalid or not supported.</div>");
